@@ -19,7 +19,7 @@ namespace Aplicacion_Web2.Entitys
         [Required]
         public DateTime horaReserva { get; set; }
 
-        public Paciente paciente { get; set; }
+        public Historia_Clinica historiClinica { get; set; }
 
         public Doctor doctor { get; set; }
     }

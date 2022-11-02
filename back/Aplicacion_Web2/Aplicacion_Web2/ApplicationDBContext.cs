@@ -8,7 +8,6 @@ namespace Aplicacion_Web2
         public ApplicationDBContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet<Paciente> Paciente {get; set;}
         public DbSet<Doctor> Doctor {get; set;}
         public DbSet<Optometra> Optometra {get; set;}
         public DbSet<Usuario> Usuario {get; set;}

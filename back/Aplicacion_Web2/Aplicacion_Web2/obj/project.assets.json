@@ -5559,11 +5559,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JAIR\\Desktop\\Ciclo IV\\Herramientas de Programación 2\\Proyectos - GitHub\\HerramientaProgramacion2\\back\\Aplicacion_Web2\\Aplicacion_Web2\\Aplicacion_Web2.csproj",
+      "projectUniqueName": "C:\\Users\\JAIR\\Desktop\\Ciclo IV\\Herramientas de Programación 2\\Proyectos - GitHub\\Sistema_Web_OftalmoPlus\\back\\Aplicacion_Web2\\Aplicacion_Web2\\Aplicacion_Web2.csproj",
       "projectName": "Aplicacion_Web2",
-      "projectPath": "C:\\Users\\JAIR\\Desktop\\Ciclo IV\\Herramientas de Programación 2\\Proyectos - GitHub\\HerramientaProgramacion2\\back\\Aplicacion_Web2\\Aplicacion_Web2\\Aplicacion_Web2.csproj",
+      "projectPath": "C:\\Users\\JAIR\\Desktop\\Ciclo IV\\Herramientas de Programación 2\\Proyectos - GitHub\\Sistema_Web_OftalmoPlus\\back\\Aplicacion_Web2\\Aplicacion_Web2\\Aplicacion_Web2.csproj",
       "packagesPath": "C:\\Users\\JAIR\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JAIR\\Desktop\\Ciclo IV\\Herramientas de Programación 2\\Proyectos - GitHub\\HerramientaProgramacion2\\back\\Aplicacion_Web2\\Aplicacion_Web2\\obj\\",
+      "outputPath": "C:\\Users\\JAIR\\Desktop\\Ciclo IV\\Herramientas de Programación 2\\Proyectos - GitHub\\Sistema_Web_OftalmoPlus\\back\\Aplicacion_Web2\\Aplicacion_Web2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

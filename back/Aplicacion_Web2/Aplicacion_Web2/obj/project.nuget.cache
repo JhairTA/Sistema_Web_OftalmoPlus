@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "43IdnuQgGzKmGKlk2Y0jIEV9WbGgdzKL9x2aqPDbgE+sLJadOfZ4e2KcaBz+NYmpHngm1crk6Sra/H2DlMztPA==",
+  "dgSpecHash": "ytlULP0m8am20PvoRLcoZrxZGXeTWDPy0IwbtuewFA0TPaByMIdF2FRJd6g+kWc9eOoJYhwdEtFCz+GWIO7lqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JAIR\\Desktop\\Ciclo IV\\Herramientas de Programación 2\\Proyectos - GitHub\\HerramientaProgramacion2\\back\\Aplicacion_Web2\\Aplicacion_Web2\\Aplicacion_Web2.csproj",
+  "projectFilePath": "C:\\Users\\JAIR\\Desktop\\Ciclo IV\\Herramientas de Programación 2\\Proyectos - GitHub\\Sistema_Web_OftalmoPlus\\back\\Aplicacion_Web2\\Aplicacion_Web2\\Aplicacion_Web2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JAIR\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\JAIR\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.17\\microsoft.aspnetcore.authentication.jwtbearer.5.0.17.nupkg.sha512",

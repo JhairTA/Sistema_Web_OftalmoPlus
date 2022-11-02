@@ -294,63 +294,6 @@ namespace Aplicacion_Web2.Migrations
                     b.ToTable("Optometra");
                 });
 
-            modelBuilder.Entity("Aplicacion_Web2.Entitys.Paciente", b =>
-                {
-                    b.Property<string>("id_paciente")
-                        .HasMaxLength(5)
-                        .HasColumnType("nvarchar(5)");
-
-                    b.Property<int?>("Historia_Clinicaid_historia_clinica")
-                        .HasColumnType("int");
-
-                    b.Property<string>("apellidospaciente")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("correopaciente")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("dnipaciente")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
-
-                    b.Property<int>("edadpaciente")
-                        .HasColumnType("int");
-
-                    b.Property<string>("estadocivilpaciente")
-                        .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
-                    b.Property<DateTime>("fechanacimientopaciente")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("generopaciente")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("nombrepaciente")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("telefonopaciente")
-                        .IsRequired()
-                        .HasMaxLength(9)
-                        .HasColumnType("nvarchar(9)");
-
-                    b.HasKey("id_paciente");
-
-                    b.HasIndex("Historia_Clinicaid_historia_clinica");
-
-                    b.ToTable("Paciente");
-                });
-
             modelBuilder.Entity("Aplicacion_Web2.Entitys.Receta", b =>
                 {
                     b.Property<string>("id_Receta")
@@ -389,6 +332,9 @@ namespace Aplicacion_Web2.Migrations
                     b.Property<DateTime>("fechaReserva")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("historiClinicaid_historia_clinica")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("horaReserva")
                         .HasColumnType("datetime2");
 
@@ -397,14 +343,11 @@ namespace Aplicacion_Web2.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("pacienteid_paciente")
-                        .HasColumnType("nvarchar(5)");
-
                     b.HasKey("id_Reserva");
 
                     b.HasIndex("doctorid_doctor");
 
-                    b.HasIndex("pacienteid_paciente");
+                    b.HasIndex("historiClinicaid_historia_clinica");
 
                     b.ToTable("Reserva_Cita");
                 });
@@ -536,15 +479,6 @@ namespace Aplicacion_Web2.Migrations
                     b.Navigation("usuario");
                 });
 
-            modelBuilder.Entity("Aplicacion_Web2.Entitys.Paciente", b =>
-                {
-                    b.HasOne("Aplicacion_Web2.Entitys.Historia_Clinica", "Historia_Clinica")
-                        .WithMany()
-                        .HasForeignKey("Historia_Clinicaid_historia_clinica");
-
-                    b.Navigation("Historia_Clinica");
-                });
-
             modelBuilder.Entity("Aplicacion_Web2.Entitys.Receta", b =>
                 {
                     b.HasOne("Aplicacion_Web2.Entitys.Consulta_Doctor", "consultaDoctor")
@@ -560,13 +494,13 @@ namespace Aplicacion_Web2.Migrations
                         .WithMany()
                         .HasForeignKey("doctorid_doctor");
 
-                    b.HasOne("Aplicacion_Web2.Entitys.Paciente", "paciente")
+                    b.HasOne("Aplicacion_Web2.Entitys.Historia_Clinica", "historiClinica")
                         .WithMany()
-                        .HasForeignKey("pacienteid_paciente");
+                        .HasForeignKey("historiClinicaid_historia_clinica");
 
                     b.Navigation("doctor");
 
-                    b.Navigation("paciente");
+                    b.Navigation("historiClinica");
                 });
 
             modelBuilder.Entity("Aplicacion_Web2.Entitys.Secretaria", b =>

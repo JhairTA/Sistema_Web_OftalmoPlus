@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Aplicacion_Web2.Migrations
 {
-    public partial class Inicial1 : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -63,33 +63,6 @@ namespace Aplicacion_Web2.Migrations
                     table.ForeignKey(
                         name: "FK_Consulta_Medica_Historia_Clinica_historiaclinicaid_historia_clinica",
                         column: x => x.historiaclinicaid_historia_clinica,
-                        principalTable: "Historia_Clinica",
-                        principalColumn: "id_historia_clinica",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Paciente",
-                columns: table => new
-                {
-                    id_paciente = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
-                    dnipaciente = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
-                    nombrepaciente = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    apellidospaciente = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    correopaciente = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    telefonopaciente = table.Column<string>(type: "nvarchar(9)", maxLength: 9, nullable: false),
-                    generopaciente = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    fechanacimientopaciente = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    estadocivilpaciente = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
-                    edadpaciente = table.Column<int>(type: "int", nullable: false),
-                    Historia_Clinicaid_historia_clinica = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Paciente", x => x.id_paciente);
-                    table.ForeignKey(
-                        name: "FK_Paciente_Historia_Clinica_Historia_Clinicaid_historia_clinica",
-                        column: x => x.Historia_Clinicaid_historia_clinica,
                         principalTable: "Historia_Clinica",
                         principalColumn: "id_historia_clinica",
                         onDelete: ReferentialAction.Restrict);
@@ -208,7 +181,7 @@ namespace Aplicacion_Web2.Migrations
                     motivo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     fechaReserva = table.Column<DateTime>(type: "datetime2", nullable: false),
                     horaReserva = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    pacienteid_paciente = table.Column<string>(type: "nvarchar(5)", nullable: true),
+                    historiClinicaid_historia_clinica = table.Column<int>(type: "int", nullable: true),
                     doctorid_doctor = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -221,10 +194,10 @@ namespace Aplicacion_Web2.Migrations
                         principalColumn: "id_doctor",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Reserva_Cita_Paciente_pacienteid_paciente",
-                        column: x => x.pacienteid_paciente,
-                        principalTable: "Paciente",
-                        principalColumn: "id_paciente",
+                        name: "FK_Reserva_Cita_Historia_Clinica_historiClinicaid_historia_clinica",
+                        column: x => x.historiClinicaid_historia_clinica,
+                        principalTable: "Historia_Clinica",
+                        principalColumn: "id_historia_clinica",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -315,11 +288,6 @@ namespace Aplicacion_Web2.Migrations
                 column: "usuarioid_Usuario");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Paciente_Historia_Clinicaid_historia_clinica",
-                table: "Paciente",
-                column: "Historia_Clinicaid_historia_clinica");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Receta_consultaDoctorid_ConsultaDoctor",
                 table: "Receta",
                 column: "consultaDoctorid_ConsultaDoctor");
@@ -330,9 +298,9 @@ namespace Aplicacion_Web2.Migrations
                 column: "doctorid_doctor");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reserva_Cita_pacienteid_paciente",
+                name: "IX_Reserva_Cita_historiClinicaid_historia_clinica",
                 table: "Reserva_Cita",
-                column: "pacienteid_paciente");
+                column: "historiClinicaid_historia_clinica");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Secretaria_usuarioid_Usuario",
@@ -359,9 +327,6 @@ namespace Aplicacion_Web2.Migrations
 
             migrationBuilder.DropTable(
                 name: "Consulta_Doctor");
-
-            migrationBuilder.DropTable(
-                name: "Paciente");
 
             migrationBuilder.DropTable(
                 name: "Consulta_Medica");
