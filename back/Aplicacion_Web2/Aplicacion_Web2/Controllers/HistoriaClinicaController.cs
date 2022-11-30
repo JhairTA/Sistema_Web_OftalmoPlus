@@ -27,7 +27,7 @@ namespace Aplicacion_Web2.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Historia_Clinica>>> findAll()
         {
-            return await context.Historia_Clinica.ToListAsync();
+            return await context.Historia_Clinica.Include(x => x.paciente).ToListAsync();
         }
 
 
@@ -36,7 +36,7 @@ namespace Aplicacion_Web2.Controllers
         [HttpGet("custom")]
         public async Task<ActionResult<List<Historia_Clinica>>> findAllCustom()
         {
-            return await context.Historia_Clinica.Where(x => x.estadohistoriaclinica == true).ToListAsync(); //Cambiar estado(traer true o false)
+            return await context.Historia_Clinica.Where(x => x.estadoHistoriaclinica == true).ToListAsync(); //Cambiar estado(traer true o false)
         }
 
 
@@ -45,6 +45,15 @@ namespace Aplicacion_Web2.Controllers
         [HttpPost]
         public async Task<ActionResult> add(Historia_Clinica hc)
         {
+            // Verificando la existencia del usuario
+            var pacienteexiste = await context.Paciente
+                .AnyAsync(x => x.idpaciente == hc.idpaciente);
+
+            if (!pacienteexiste)
+            {
+                return NotFound($"No existe el paciente con codigo: {hc.idpaciente}");
+            }
+
             context.Add(hc);
             await context.SaveChangesAsync();
             return Ok();
@@ -72,7 +81,7 @@ namespace Aplicacion_Web2.Controllers
             return Ok();
         }
 
-        //Cuando queremos eliminar informacion   (BORRA DE LA BASE DE DATOS)
+        //Cuando queremos eliminar informacion
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> delete(int id)
         {
@@ -81,25 +90,11 @@ namespace Aplicacion_Web2.Controllers
             {
                 return NotFound();
             }
-
-            context.Remove(new Historia_Clinica() { id_historia_clinica = id });
+            var historia = await context.Historia_Clinica.FirstOrDefaultAsync(x => x.id_historia_clinica == id);
+            historia.estadoHistoriaclinica = false;
+            context.Update(historia);
             await context.SaveChangesAsync();
             return Ok();
         }
-
-        /*[HttpDelete("{id:int}")]
-        public async Task<ActionResult> delete(int id)
-        {
-            var existe = await context.Paciente.AnyAsync(x => x.id_paciente == id);
-            if (!existe)
-            {
-                return NotFound();
-            }
-            var paciente = await context.Paciente.FirstOrDefaultAsync(x => x.id_paciente == id);
-            paciente.estado = false;
-            context.Update(paciente);
-            await context.SaveChangesAsync();
-            return Ok();
-        }*/
     }
 }

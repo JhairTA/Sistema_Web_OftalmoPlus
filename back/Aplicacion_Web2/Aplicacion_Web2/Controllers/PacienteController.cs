@@ -6,71 +6,74 @@ using System.Threading.Tasks;
 
 namespace Aplicacion_Web2.Controllers
 {
+    //Indicamos que es un controlador
     [ApiController]
-    [Route("Sistema_Web_OftalmoPlus/usuario")]
-    public class UsuarioController: ControllerBase
+    //Es definir la ruta de acceso al controlador
+    [Route("Sistema_Web_OftalmoPlus/paciente")]
+    public class PacienteController : ControllerBase
     {
         private readonly ApplicationDBContext context;
 
-        //Creamos el metodo constructor
-        public UsuarioController(ApplicationDBContext context)
+        //creamos el metodo constructor
+        public PacienteController(ApplicationDBContext context)
         {
             this.context = context;
         }
 
-
         //Cuando queremos obtener informacion
         [HttpGet]
-        public async Task<ActionResult<List<Usuario>>> finnAll()
+        public async Task<ActionResult<List<Paciente>>> finnAll()
         {
-            return await context.Usuario.ToListAsync();
+            return await context.Paciente.ToListAsync();
         }
 
         //Cuando queremos guardar informacion
         [HttpPost]
-        public async Task<ActionResult> add(Usuario a)
+        public async Task<ActionResult> add(Paciente p)
         {
-            context.Add(a);
+            context.Add(p);
             await context.SaveChangesAsync();
             return Ok();
         }
 
         //Cuando queremos buscar informacion
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<Usuario>> findById(int id)
+        public async Task<ActionResult<Paciente>> findById(int id)
         {
-            var usuario = await context.Usuario.FirstOrDefaultAsync(x => x.id_Usuario == id);
-            return usuario;
+            var paciente = await context.Paciente.FirstOrDefaultAsync(x => x.idpaciente == id);
+            return paciente;
         }
-
 
         //Cuando queremos actualizar informacion
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> update(Usuario a, int id)
+        public async Task<ActionResult> update(Paciente p, int id)
         {
-            if (a.id_Usuario != id)
+            if (p.idpaciente != id)
             {
                 return BadRequest("No se encuentra el codigo correspondiente");
             }
 
-            context.Update(a);
+            context.Update(p);
             await context.SaveChangesAsync();
             return Ok();
         }
 
+       
+        //Cuando queremos eliminar informacion
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> delete(int id)
         {
-            var existe = await context.Usuario.AnyAsync(x => x.id_Usuario == id);
+            var existe = await context.Paciente.AnyAsync(x => x.idpaciente == id);
             if (!existe)
             {
                 return NotFound();
             }
-            var usuario = await context.Usuario.FirstOrDefaultAsync(x => x.id_Usuario == id);
-            usuario.estadoUsuario = false;
-            context.Update(usuario);
+            var paciente = await context.Paciente.FirstOrDefaultAsync(x => x.idpaciente == id);
+            paciente.estadoPaciente = false;
+            context.Update(paciente);
             await context.SaveChangesAsync();
             return Ok();
         }
+
     }
 }

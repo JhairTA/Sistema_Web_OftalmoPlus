@@ -12,5 +12,8 @@ namespace Aplicacion_Web2.Entitys
 
         [Required]
         public string contraseñaUsuario { get; set; }
+
+        [Required]
+        public bool estadoUsuario { get; set; }
     }
 }
