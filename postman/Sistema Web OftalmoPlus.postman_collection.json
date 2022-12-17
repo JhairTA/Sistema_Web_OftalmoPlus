@@ -1,0 +1,745 @@
+{
+	"info": {
+		"_postman_id": "a79a0ae2-34eb-4f0e-8ed3-9016e29b29f6",
+		"name": "Sistema Web OftalmoPlus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23340643"
+	},
+	"item": [
+		{
+			"name": "Historia Clinica",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/historiaclinica",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"historiaclinica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/historiaclinica/custom",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"historiaclinica",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id_historia_clinica\": 1,\r\n  \"dnipaciente\": \"76496556\",\r\n  \"nombrepaciente\": \"Diego\",\r\n  \"apellidospaciente\": \"Torre Macetas\",\r\n  \"correopaciente\": \"DiegoMt@outlook.com\",\r\n  \"telefonopaciente\": \"123456789\",\r\n  \"generopaciente\": \"Masculino\",\r\n  \"fechanacimientopaciente\": \"1999-12-21\",\r\n  \"estadocivilpaciente\": \"Soltero\",\r\n  \"edadpaciente\": 21,\r\n  \"enfermedad_personal\": \"No\",\r\n  \"alergias\": \"No\",\r\n  \"enfermedades_oculares\": \"No\",\r\n  \"uso_medicamentos\": \"No\",\r\n  \"operaciones\": \"No\",\r\n  \"motivo_consulta\": \"No\",\r\n  \"estadohistoriaclinica\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/historiaclinica/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"historiaclinica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idpaciente\": 2,\r\n  \"enfermedad_personal\": \"No\",\r\n  \"alergias\": \"No\",\r\n  \"enfermedades_oculares\": \"No\",\r\n  \"uso_medicamentos\": \"No\",\r\n  \"operaciones\": \"No\",\r\n  \"motivo_consulta\": \"No\",\r\n  \"estadohistoriaclinica\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/historiaclinica",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"historiaclinica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/historiaclinica/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"historiaclinica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/historiaclinica/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"historiaclinica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/usuario",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreUsuario\": \"Diego mt\",\r\n  \"contraseñaUsuario\": \"2112\",\r\n  \"estadoUsuario\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/usuario",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"id_Usuario\": 3,\r\n        \"nombreUsuario\": \"Hernan12\",\r\n        \"contraseñaUsuario\": \"777444\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/usuario/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"usuario",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/usuario/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/usuario/3",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"usuario",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/usuario/custom",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"usuario",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empleado",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/empleado",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dni_empleado\": \"78475968\",\r\n  \"nombre_empleado\": \"Jose Luis\",\r\n  \"apellido_empleado\": \"Palacios\",\r\n  \"telefono_empleado\": \"958485634\",\r\n  \"correo_empleado\": \"Jose17@gmail.com\",\r\n  \"genero_empleado\": \"Masculino\",\r\n  \"cargo_empleado\": \"Administrador\",\r\n  \"id_Usuario\": 5,\r\n  \"estadoEmpleado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/empleado",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id_empleado\": 1,\r\n        \"dni_empleado\": \"78475968\",\r\n        \"nombre_empleado\": \"Carlos\",\r\n        \"apellido_empleado\": \"Palacios\",\r\n        \"telefono_empleado\": \"958485634\",\r\n        \"correo_empleado\": \"Jose17@gmail.com\",\r\n        \"genero_empleado\": \"Masculin\",\r\n        \"cargo_empleado\": \"Administrador\",\r\n        \"id_Usuario\": 100,\r\n        \"estadoEmpleado\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/empleado/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"empleado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/empleado/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"empleado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/empleado/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"empleado",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/empleado/custom",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"empleado",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Paciente",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/paciente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"paciente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dnipaciente\": \"2\",\r\n  \"nombrepaciente\": \"Pedro\",\r\n  \"apellidospaciente\": \"Ruiz\",\r\n  \"correopaciente\": \"Pedro17@gamil.com\",\r\n  \"telefonopaciente\": \"935842687\",\r\n  \"generopaciente\": \"Masculino\",\r\n  \"fechanacimientopaciente\": \"2022-05-17\",\r\n  \"estadocivilpaciente\": \"Soltero\",\r\n  \"edadpaciente\": 27,\r\n  \"estadoPaciente\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/paciente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"paciente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idpaciente\": 1,\r\n  \"dnipaciente\": \"74816957\",\r\n  \"nombrepaciente\": \"Pedro\",\r\n  \"apellidospaciente\": \"Ruiz\",\r\n  \"correopaciente\": \"Pedro17@gamil.com\",\r\n  \"telefonopaciente\": \"935842687\",\r\n  \"generopaciente\": \"Masculino\",\r\n  \"fechanacimientopaciente\": \"2022-05-17T00:00:00\",\r\n  \"estadocivilpaciente\": \"Soltero\",\r\n  \"edadpaciente\": 37,\r\n  \"id_historia_clinica\": 1,\r\n  \"historia_clinica\": null,\r\n  \"estadoPaciente\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/paciente/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/paciente/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/paciente/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"paciente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/paciente/custom",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"paciente",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consulta Medica",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/consultamedica",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"consultamedica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"motivoConsulta\": \"string\",\r\n  \"id_historia_clinica\": 1,\r\n  \"id_empleado\": 1,\r\n  \"estadoConsultaMedica\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/consultamedica",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"consultamedica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id_ConsultaMedica\": 1,\r\n  \"motivoConsulta\": \"Chequeo General\",\r\n  \"id_historia_clinica\": 1,\r\n  \"id_empleado\": 1,\r\n  \"estadoConsultaMedica\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/consultamedica/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"consultamedica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/consultamedica/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"consultamedica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/consultamedica/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"consultamedica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllCustom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44350/Sistema_Web_OftalmoPlus/consultamedica/custom",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44350",
+							"path": [
+								"Sistema_Web_OftalmoPlus",
+								"consultamedica",
+								"custom"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
